@@ -1,0 +1,15 @@
+<h1>Unit <%= @unit.number %>:</h1> <h2><%= @unit.title %></h2>
+
+<br>
+</br>
+<p><a href="/units/<%= @unit.id %>/edit">Edit</a></p>
+<p><a href="/units/<%= @unit.id %>"
+      data-confirm="You sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a></p>
+<br>
+
+<p><a href="/units">Go back to the units index</a></p>
+
+
+<p><a href="/units/<%= @unit.id.next %>">Next</a></p>

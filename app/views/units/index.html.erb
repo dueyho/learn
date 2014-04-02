@@ -1,0 +1,19 @@
+<h1> Lessons </h1>
+
+<h2>Add a Lesson!</h2>
+
+<ul>
+  <% @units.each do |unit| %>
+  <li><a href="/units/<%= unit.id %>"><%= unit.number %>: <%= unit.title %></a>
+  <%end%>
+</ul>
+<br>
+<br>
+
+<form action="/units" method="post">
+  <label for="unit_number">Number</label>
+  <input id="unit_number" name="number" type="number" value ="<%= @unit.number%>">
+  <label for="unit_title">Title</label>
+  <input id="unit_title" name="title" type="text" value ="<%= @unit.title%>">
+  <button>Add Lesson</button>
+</form>

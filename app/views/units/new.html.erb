@@ -1,0 +1,18 @@
+<h1>New unit</h1>
+
+<% if @unit.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @unit.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/units" method="post">
+  <label for="unit_number">Number</label>
+  <input id="unit_number" name="number" type="number" value ="<%= @unit.number%>">
+  <label for="unit_title">Title</label>
+  <input id="unit_title" name="title" type="text" value ="<%= @unit.title%>">
+  <button>Create Unit</button>
+</form>
