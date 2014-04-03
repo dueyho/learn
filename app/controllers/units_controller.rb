@@ -1,8 +1,12 @@
 class UnitsController < ApplicationController
   def index
-    @units = Unit.all
     @unit = Unit.new
-    render('units/index.html.erb')
+    if params[:search]
+      @units = Unit.search(params[:search])
+    else
+      @units = Unit.all
+      render('units/index.html.erb')
+    end
   end
 
   def show
@@ -20,6 +24,7 @@ class UnitsController < ApplicationController
                         :title => params[:title])
     if @unit.save
       redirect_to("/units/#{@unit.id}")
+      # render("units/success.html.erb")
     else
       render('units/new.html.erb')
     end

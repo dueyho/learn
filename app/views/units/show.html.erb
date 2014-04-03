@@ -11,5 +11,10 @@
 
 <p><a href="/units">Go back to the units index</a></p>
 
+<%if @unit.next != nil %>
+<a href="/units/<%= @unit.next.id %>">Next</a>
+<%end%>
 
-<p><a href="/units/<%= @unit.id.next %>">Next</a></p>
+<%if @unit.previous != nil %>
+<a href="/units/<%= @unit.previous.id %>">Previous</a>
+<%end%>
