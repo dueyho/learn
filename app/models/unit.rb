@@ -12,7 +12,7 @@ class Unit < ActiveRecord::Base
 
   def self.search(input)
     if input
-      Unit.find(:all, :conditions => ['title LIKE ?', "%#{input}%"])
+      Unit.find(:all, :conditions => ['title LIKE ?', "%#{input.capitalize}%"])
       # Unit.find_all_by_title("%#{input}%")
     else
       Unit.find(:all)
